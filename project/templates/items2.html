@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for('static',filename='img/bg1.jpg')}}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Available Medicines and Products</h1>
+            <span class="subheading">ITEM LISTS AVAILABLE IN OUR PHARMACY</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+ <p>Avalaible items in our pharamacy </p>            
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Sno </th>
+        <th>Products</th>
+
+        
+    
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for post in posts %} 
+      <tr>
+
+        
+        <td>{{post.sno}}</td>
+       
+        <td>{{post.product}}</td>
+        
+        
+ 
+       </tr>
+       
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
+{% endblock %}
+  

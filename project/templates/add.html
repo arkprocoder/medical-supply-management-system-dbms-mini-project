@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for('static',filename='img/home-bg.jpg')}}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{params['headname']}}</h1>
+            <span class="subheading">welcome you are logged in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<div class="container">
+  <h2>ADD DATA </h2>
+  <a href="/login"> <button class="btn btn-success" > Home</button> </a>
+  <a href="/logout"> <button class="btn btn-success" > logout </button> </a>
+           <form name="sentMessage" id="contactForm" novalidate action="/adding" method="post">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>title</label>
+              <input type="text" name='title' class="form-control" placeholder="title" id="title" required data-validation-required-message="enter title" value="{{post.title}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>slug</label>
+              <input type="email" name="slug" class="form-control" placeholder="Enter slugs" id="slug" required data-validation-required-message="Please enter slug" value="{{post.slug}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group col-xs-12 floating-label-form-group controls">
+              <label>content</label>
+              <input type="tel" name="content" class="form-control" placeholder="enter content" id="content" required data-validation-required-message="Please enter your phone number." value="{{post.content}}">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          
+          <br>
+          <div id="success"></div>
+          <div class="form-group">
+            <button  type="submit" class="btn btn-primary"  id="sendMessageButton">ADD DATA</button>
+
+
+          </div>
+        </form>
+     
+
+
+
+  
+ 
+{% endblock %}

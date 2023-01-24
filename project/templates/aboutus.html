@@ -1,0 +1,126 @@
+  
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{url_for('static',filename='img/about-bg.jpg')}}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About us</h1>
+            <span class="subheading">This is how I started...</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <div class="container my-3">
+        <h2>ABOUT Pharmacy Management System</h2>
+        <hr>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How We started this Management System
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body">
+                    Once i went to a medical shop there was no medicines which i wanted he said no stocks available he have to go pharmacy
+                    to bring so i got a idea why not a management who provides products to medical shop so they no need of going pharmacy
+                    then we got a dbms miniproject so this idea we implemented.
+
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Who is the Owner Of Pharmacy Management System?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                    Design by: APOORVA A.N 
+                   Implemented by: ANEES-UR-REHMAN
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How to Reach Pharmacy Management SYSTEM?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                    R.t.nagar 5th phase hmt playground  aruna complex 2nd floor Bangalore 562132
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFourcollapseFour">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            How To Download the Pharmacy Management App?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFourcollapseFour" data-parent="#accordionExample">
+                    <div class="card-body">
+                    Its avaiable in Playstore :ARK application
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            How to Avail Discount At ARK?
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                    <div class="card-body">
+                    THE MORE YOU ORDER SOON WE DELIVER
+                    WITH CASHBACKS OFFER WHEN YOU PAY WITH DEBITCARD OR UPI PAYMENTS
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
+{% endblock %}

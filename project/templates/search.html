@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead mb-0" style="background-image: url('{{url_for('static',filename='img/login.png')}}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Search the required record</h1>
+            <span class="subheading">life becomes easier when you stop lagging behind fake things</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+   {% with messages=get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+
+  <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+  {% endif %}
+  {% endwith %}
+  <br>
+
+  <div class="container">
+ 
+
+
+<nav class="navbar navbar-dark bg-dark">
+  <a  href="/items"> <button class="btn btn-warning" >Medicines LIST</button> </a>
+  <a  href="/items2"> <button class="btn btn-warning" >Products List</button> </a>
+  <a class="navbar-brand bg-dark"></a>
+
+  <form class="form-inline" action="/search" method="post">
+
+    <input class="form-control mr-sm-2" id="search" name="search" type="text" placeholder="Search" aria-label="Search" autocomplete="on">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  >Search</button>
+  </form>
+</nav>
+<br>
+
+
+<h2><span class="badge badge-">ADD NEW MEDICINES AND PRODUCTS</span></h2>
+
+<form action="/addmp" method="post">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label >Medicines</label>
+      <input type="text" class="form-control" name="medicine"  id="medicine" placeholder="Add Medicine" autocomplete="on" >
+     
+    </div>
+    
+   </div>
+
+  <button class="btn btn-primary" type="submit">Add Medicines</button>
+</form>
+<br>
+
+<form action="/addpd" method="post">
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label >Products</label>
+      <input type="text" class="form-control" name="product"  id="product" placeholder="Add Products" autocomplete="on" >
+     
+    </div>
+  
+   </div>
+
+  <button class="btn btn-primary" type="submit">Add Products</button>
+</form>
+</div>
+</div>
+</div>
+
+ 
+
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
+{% endblock %}
+  

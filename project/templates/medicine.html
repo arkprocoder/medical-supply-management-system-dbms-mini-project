@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+  <header class="masthead mb-0" style="background-image: url('{{url_for('static',filename='img/gmail.jpg')}}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1> MEDICINES AND PRODUCTS </h1>
+            <span class="subheading">Do you Have questions? I have answers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+   {% with messages=get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  {% for category, message in messages %}
+
+  <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  {% endfor %}
+  {% endif %}
+  {% endwith %}
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
+     
+
+
+
+
+
+
+
+
+        <form name="sentMessage" id="contactForm" novalidate action="/medicines" method="post">
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>mid</label>
+              <input type="number" name='mid' class="form-control" placeholder="enter id" id="mid" required data-validation-required-message="Please enter id" >
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>name</label>
+              <input type="text" name="name" class="form-control" placeholder="Enter name" id="name" required data-validation-required-message="Please enter name">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+       
+            <div class="control-group">
+
+            <div class="form-group floating-label-form-group controls">
+              <label>Medicines</label>
+              <textarea rows="5" class="form-control" placeholder="Enter medicines names" id="medicines" name="medicines" required data-validation-required-message="Please enter a medicines/products/syrups" ></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Products</label>
+              <textarea rows="5" class="form-control" placeholder="Enter products names" id="products" name="products" required data-validation-required-message="Please enter a medicines/products/syrups" ></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Email id</label>
+              <input type="email" name="email" class="form-control" placeholder="Enter your mail id" id="email" required data-validation-required-message="Please enter email">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+            <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Amount</label>
+              <input type="email" name="amount" class="form-control" placeholder="Enter Amount" id="amount" required data-validation-required-message="Please enter amount">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <br>
+          <div id="success"></div>
+          <div class="form-group">
+            <button onclick="return confirm('Are you sure to SaveData?');" type="submit" class="btn btn-primary" id="sendMessageButton" >Send</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
+{% endblock %}
+  

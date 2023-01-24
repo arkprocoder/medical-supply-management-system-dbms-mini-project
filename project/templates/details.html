@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <!-- Page Header -->
+<header class="masthead" style="background-image: url('{{url_for('static',filename='img/bg1.jpg')}}">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>View Details</h1>
+            <h2 class="subheading">medical records details</h2>
+            <span class="meta">
+              <a href="#">CODE ONCE THINK TWICE</a>
+             </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+<div class="container">
+  <a  href="/sp"><button class="btn btn-danger" >Stored Details</button>
+     <h4> Click here to view Recorded Information </h4>
+  </a>
+</div>
+
+<div class="container">
+ <!-- <h2><span class="badge ">Ordered Details</span></h2> -->
+
+
+  <p>medical management information date and timings stored over here </p>            
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>mid</th>
+        <th>actions</th>
+        <th>Date</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for post in posts %}
+      <tr>
+        <td>{{post.mid}}</td>
+        <td>{{post.action}}</td>
+        <td>{{post.date}}</td>
+       
+       </tr>
+       
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+  <hr>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
+{% endblock %}
+  
